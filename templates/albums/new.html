@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Add a new album</title>
+    </head>
+    <body>
+        <h1>Add a new album</h1>
+        <form action="/albums" method="POST">
+            {% if errors %}
+            <p class="t-errors">
+                Your submition contains errors:
+                {{errors | join(', ')}}
+            </p>
+            {% endif %}
+
+
+            <p>
+                <lable for="title">Title</lable>
+                <br>
+                <input type="text" name="title">
+            </p>
+
+            <p>
+                <lable for="release_year">Release Year</lable>
+                <br>
+                <input type="text" name="release_year" id="release_year">
+            </p>
+
+            <p>
+                <input type="submit" value="Add album">
+            </p>
+
+
+        </form>    
+    </body>
+</html>

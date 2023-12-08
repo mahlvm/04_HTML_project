@@ -1,11 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Find a single artists</title>
+        <title>Artist List</title>
     </head>
     <body>
-        <h1>{{albums.title}}</h1>
-        <p>Release year:{{albums.release_year}}</p>
-        <p>Artist: {{artists.name}}</p>
+        <h1>Artists</h1>
+        <ul>
+            {% for artist in artists %}
+                <li>
+                    <a href="/artists/{{artist.id}}">{{artist.name}} </a>
+                </li>
+        {% endfor %}
+        </ul>
+        <p>
+            <a href="/artists/new">Add artist</a>
+        </p>
     </body>
 </html>
